@@ -1,7 +1,7 @@
 <h1>Password Generator</h1>
 <div>
   <label>Password Length</label>
-  <input />
+  <input  (input)="onChangeLength($event)"/>
 </div>
 
 <div>
@@ -21,7 +21,7 @@
 
 <div>
   <!-- Event Binding Syntax An event we want to listen to -->
-  <button (click)="onButtonClick()">Generate</button>
+  <button [disabled]="!(length && (useLetters || useNumbers || useSymbols))" (click)="onButtonClick()">Generate</button>
 </div>
 
 <div>
