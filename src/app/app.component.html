@@ -1,32 +1,31 @@
 <h1>Password Generator</h1>
 <div>
-
-<label>Password Genration at its best :)</label>
-<input/>
+  <label>Password Genration at its best :)</label>
+  <input />
 </div>
 
 <div>
   <label>Use Numbers</label>
-  <input type="checkbox"/>
+  <input type="checkbox" />
 </div>
 
 <div>
   <label>Use Letters</label>
-  <input type="checkbox"/>
+  <input type="checkbox" />
 </div>
-
 
 <div>
   <label>Use Symbols</label>
-  <input type="checkbox"/>
+  <input type="checkbox" />
 </div>
 
 <div>
   <!-- Event Binding Syntax An event we want to listen to -->
-<button (click)="onButtonClick()">Generate</button>
+  <button (click)="onButtonClick()">Generate</button>
 </div>
 
 <div>
+  <!-- Property Binding Syntax Value Property is set to an Expression. -->
   <label>Your Password</label>
-  <input/>
+  <input [value]="getPassword()" />
 </div>
