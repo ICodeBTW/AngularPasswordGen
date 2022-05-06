@@ -1,33 +1,66 @@
-<h1>Password Generator</h1>
-<div>
-  <label>Password Length</label>
-  <input  (input)="onChangeLength($event)"/>
-</div>
+<div class="container card">
+  <header class="card-header">
+    <p class="card-header-title">Password Generator</p>
+  </header>
 
-<div>
-  <label>Use Numbers</label>
-  <input type="checkbox" (change)="onUseNumbersChange()" />
-</div>
+  <div class="card-content">
+    <div class="field">
+      <label class="label">Password Length</label>
+      <div class="control">
+        <input class="input" (input)="onChangeLength($event)" />
+      </div>
+    </div>
 
-<div>
-  <label>Use Letters</label>
-  <input type="checkbox" (change)="onUseLettersChange()" />
-</div>
+    <div class="field">
+      <label class="checkbox">
+        <input
+          class="checkbox"
+          type="checkbox"
+          (change)="onUseNumbersChange()"
+        />
+        Use Numbers</label
+      >
+    </div>
 
-<div>
-  <label>Use Symbols</label>
-  <input type="checkbox" (change)="onUseSymbolsChange()"/>
-</div>
+    <div class="field">
+      <label class="checkbox">
+        <input
+          class="checkbox"
+          type="checkbox"
+          (change)="onUseLettersChange()"
+        />
+        Use Letters</label
+      >
+    </div>
 
-<div>
-  <!-- Event Binding Syntax An event we want to listen to -->
-  <button [disabled]="!(length && (useLetters || useNumbers || useSymbols))" (click)="onButtonClick()">Generate</button>
-</div>
+    <div class="field">
+      <label class="checkbox">
+        <input
+          class="checkbox"
+          type="checkbox"
+          (change)="onUseSymbolsChange()"
+        />
+        Use Symbols</label
+      >
+    </div>
 
-<div>
-  <!-- Property Binding Syntax Value Property is set to an Expression. -->
-  <label>Your Password</label>
-  <input [value]="getPassword()" />
+    <div class="field">
+      <!-- Event Binding Syntax An event we want to listen to -->
+      <button
+        class="button is-info"
+        [disabled]="!(length && (useLetters || useNumbers || useSymbols))"
+        (click)="onButtonClick()"
+      >
+        Generate
+      </button>
+    </div>
+
+    <div class="field" *ngIf="password">
+      <!-- Property Binding Syntax Value Property is set to an Expression. -->
+      <label class="label">Your Password</label>
+      <input class="input" [value]="getPassword()" />
+    </div>
+  </div>
 </div>
 
 <!-- Printing the value of a property/variable [String Interpolation] -->
